@@ -1,0 +1,163 @@
+{
+    "students": [
+        {
+            "name": "Alice",
+            "classes": [
+                {
+                    "className": "Math",
+                    "teacher": "Mr. Smith",
+                    "assignments": [
+                        {"assignment": "Homework 1", "grade": 95},
+                        {"assignment": "Midterm Exam", "grade": 88},
+                        {"assignment": "Final Exam", "grade": 92}
+                    ]
+                },
+                {
+                    "className": "Science",
+                    "teacher": "Mrs. Johnson",
+                    "assignments": [
+                        {"assignment": "Lab Report", "grade": 90},
+                        {"assignment": "Final Project", "grade": 85},
+                        {"assignment": "Quiz 1", "grade": 93}
+                    ]
+                },
+                {
+                    "className": "History",
+                    "teacher": "Dr. Lee",
+                    "assignments": [
+                        {"assignment": "Research Paper", "grade": 87},
+                        {"assignment": "Presentation", "grade": 90}
+                    ]
+                }
+            ],
+            "gpa": 3.7
+        },
+        {
+            "name": "Bob",
+            "classes": [
+                {
+                    "className": "History",
+                    "teacher": "Dr. Lee",
+                    "assignments": [
+                        {"assignment": "Essay", "grade": 78},
+                        {"assignment": "Final Project", "grade": 82},
+                        {"assignment": "Class Discussion", "grade": 80}
+                    ]
+                },
+                {
+                    "className": "Literature",
+                    "teacher": "Ms. Brown",
+                    "assignments": [
+                        {"assignment": "Book Report", "grade": 85},
+                        {"assignment": "Poetry Analysis", "grade": 88}
+                    ]
+                },
+                {
+                    "className": "Physical Education",
+                    "teacher": "Mr. White",
+                    "assignments": [
+                        {"assignment": "Fitness Test", "grade": 90},
+                        {"assignment": "Team Project", "grade": 95}
+                    ]
+                }
+            ],
+            "gpa": 3.4
+        },
+        {
+            "name": "Charlie",
+            "classes": [
+                {
+                    "className": "Art",
+                    "teacher": "Mrs. Green",
+                    "assignments": [
+                        {"assignment": "Painting", "grade": 92},
+                        {"assignment": "Portfolio", "grade": 95},
+                        {"assignment": "Sketching Assignment", "grade": 89}
+                    ]
+                },
+                {
+                    "className": "Music",
+                    "teacher": "Mr. Blue",
+                    "assignments": [
+                        {"assignment": "Performance", "grade": 89},
+                        {"assignment": "Theory Exam", "grade": 91},
+                        {"assignment": "Composition", "grade": 94}
+                    ]
+                },
+                {
+                    "className": "Drama",
+                    "teacher": "Ms. Purple",
+                    "assignments": [
+                        {"assignment": "Monologue Performance", "grade": 90},
+                        {"assignment": "Group Play", "grade": 92}
+                    ]
+                }
+            ],
+            "gpa": 3.9
+        },
+        {
+            "name": "David",
+            "classes": [
+                {
+                    "className": "Computer Science",
+                    "teacher": "Mr. Black",
+                    "assignments": [
+                        {"assignment": "Project 1", "grade": 88},
+                        {"assignment": "Final Exam", "grade": 94},
+                        {"assignment": "Coding Challenge", "grade": 90}
+                    ]
+                },
+                {
+                    "className": "Statistics",
+                    "teacher": "Mrs. Grey",
+                    "assignments": [
+                        {"assignment": "Homework", "grade": 85},
+                        {"assignment": "Midterm", "grade": 90},
+                        {"assignment": "Final Project", "grade": 93}
+                    ]
+                },
+                {
+                    "className": "Physics",
+                    "teacher": "Dr. Brown",
+                    "assignments": [
+                        {"assignment": "Lab Report", "grade": 87},
+                        {"assignment": "Final Exam", "grade": 91}
+                    ]
+                }
+            ],
+            "gpa": 3.8
+        },
+        {
+            "name": "Eva",
+            "classes": [
+                {
+                    "className": "Physics",
+                    "teacher": "Dr. Brown",
+                    "assignments": [
+                        {"assignment": "Lab Report", "grade": 87},
+                        {"assignment": "Final Exam", "grade": 91},
+                        {"assignment": "Quiz 1", "grade": 89}
+                    ]
+                },
+                {
+                    "className": "Chemistry",
+                    "teacher": "Mrs. White",
+                    "assignments": [
+                        {"assignment": "Experiment", "grade": 92},
+                        {"assignment": "Midterm", "grade": 88},
+                        {"assignment": "Final Project", "grade": 90}
+                    ]
+                },
+                {
+                    "className": "Biology",
+                    "teacher": "Ms. Red",
+                    "assignments": [
+                        {"assignment": "Research Paper", "grade": 85},
+                        {"assignment": "Presentation", "grade": 93}
+                    ]
+                }
+            ],
+            "gpa": 3.6
+        }
+    ]
+}
