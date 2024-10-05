@@ -1,163 +1,280 @@
 {
-    "students": [
-        {
-            "name": "Alice",
-            "classes": [
-                {
+    "students": {
+        "Alice": {
+            "classes": {
+                "History": {
+                    "assignments": [
+                        {
+                            "assignment": "Research Paper",
+                            "grade": 87
+                        },
+                        {
+                            "assignment": "Presentation",
+                            "grade": 90
+                        }
+                    ],
+                    "className": "History",
+                    "teacher": "Dr. Lee"
+                },
+                "Math": {
+                    "assignments": [
+                        {
+                            "assignment": "Homework 1",
+                            "grade": 95
+                        },
+                        {
+                            "assignment": "Midterm Exam",
+                            "grade": 88
+                        },
+                        {
+                            "assignment": "Final Exam",
+                            "grade": 92
+                        }
+                    ],
                     "className": "Math",
-                    "teacher": "Mr. Smith",
-                    "assignments": [
-                        {"assignment": "Homework 1", "grade": 95},
-                        {"assignment": "Midterm Exam", "grade": 88},
-                        {"assignment": "Final Exam", "grade": 92}
-                    ]
+                    "teacher": "Mr. Smith"
                 },
-                {
+                "Science": {
+                    "assignments": [
+                        {
+                            "assignment": "Lab Report",
+                            "grade": 90
+                        },
+                        {
+                            "assignment": "Final Project",
+                            "grade": 85
+                        },
+                        {
+                            "assignment": "Quiz 1",
+                            "grade": 93
+                        }
+                    ],
                     "className": "Science",
-                    "teacher": "Mrs. Johnson",
-                    "assignments": [
-                        {"assignment": "Lab Report", "grade": 90},
-                        {"assignment": "Final Project", "grade": 85},
-                        {"assignment": "Quiz 1", "grade": 93}
-                    ]
-                },
-                {
-                    "className": "History",
-                    "teacher": "Dr. Lee",
-                    "assignments": [
-                        {"assignment": "Research Paper", "grade": 87},
-                        {"assignment": "Presentation", "grade": 90}
-                    ]
+                    "teacher": "Mrs. Johnson"
                 }
-            ],
-            "gpa": 3.7
+            },
+            "gpa": 3.7,
+            "name": "Alice"
         },
-        {
-            "name": "Bob",
-            "classes": [
-                {
-                    "className": "History",
-                    "teacher": "Dr. Lee",
+        "Bob": {
+            "classes": {
+                "History": {
                     "assignments": [
-                        {"assignment": "Essay", "grade": 78},
-                        {"assignment": "Final Project", "grade": 82},
-                        {"assignment": "Class Discussion", "grade": 80}
-                    ]
+                        {
+                            "assignment": "Essay",
+                            "grade": 78
+                        },
+                        {
+                            "assignment": "Final Project",
+                            "grade": 82
+                        },
+                        {
+                            "assignment": "Class Discussion",
+                            "grade": 80
+                        }
+                    ],
+                    "className": "History",
+                    "teacher": "Dr. Lee"
                 },
-                {
+                "Literature": {
+                    "assignments": [
+                        {
+                            "assignment": "Book Report",
+                            "grade": 85
+                        },
+                        {
+                            "assignment": "Poetry Analysis",
+                            "grade": 88
+                        }
+                    ],
                     "className": "Literature",
-                    "teacher": "Ms. Brown",
-                    "assignments": [
-                        {"assignment": "Book Report", "grade": 85},
-                        {"assignment": "Poetry Analysis", "grade": 88}
-                    ]
+                    "teacher": "Ms. Brown"
                 },
-                {
+                "Physical Education": {
+                    "assignments": [
+                        {
+                            "assignment": "Fitness Test",
+                            "grade": 90
+                        },
+                        {
+                            "assignment": "Team Project",
+                            "grade": 95
+                        }
+                    ],
                     "className": "Physical Education",
-                    "teacher": "Mr. White",
-                    "assignments": [
-                        {"assignment": "Fitness Test", "grade": 90},
-                        {"assignment": "Team Project", "grade": 95}
-                    ]
+                    "teacher": "Mr. White"
                 }
-            ],
-            "gpa": 3.4
+            },
+            "gpa": 3.4,
+            "name": "Bob"
         },
-        {
-            "name": "Charlie",
-            "classes": [
-                {
+        "Charlie": {
+            "classes": {
+                "Art": {
+                    "assignments": [
+                        {
+                            "assignment": "Painting",
+                            "grade": 92
+                        },
+                        {
+                            "assignment": "Portfolio",
+                            "grade": 95
+                        },
+                        {
+                            "assignment": "Sketching Assignment",
+                            "grade": 89
+                        }
+                    ],
                     "className": "Art",
-                    "teacher": "Mrs. Green",
-                    "assignments": [
-                        {"assignment": "Painting", "grade": 92},
-                        {"assignment": "Portfolio", "grade": 95},
-                        {"assignment": "Sketching Assignment", "grade": 89}
-                    ]
+                    "teacher": "Mrs. Green"
                 },
-                {
-                    "className": "Music",
-                    "teacher": "Mr. Blue",
+                "Drama": {
                     "assignments": [
-                        {"assignment": "Performance", "grade": 89},
-                        {"assignment": "Theory Exam", "grade": 91},
-                        {"assignment": "Composition", "grade": 94}
-                    ]
-                },
-                {
+                        {
+                            "assignment": "Monologue Performance",
+                            "grade": 90
+                        },
+                        {
+                            "assignment": "Group Play",
+                            "grade": 92
+                        }
+                    ],
                     "className": "Drama",
-                    "teacher": "Ms. Purple",
+                    "teacher": "Ms. Purple"
+                },
+                "Music": {
                     "assignments": [
-                        {"assignment": "Monologue Performance", "grade": 90},
-                        {"assignment": "Group Play", "grade": 92}
-                    ]
+                        {
+                            "assignment": "Performance",
+                            "grade": 89
+                        },
+                        {
+                            "assignment": "Theory Exam",
+                            "grade": 91
+                        },
+                        {
+                            "assignment": "Composition",
+                            "grade": 94
+                        }
+                    ],
+                    "className": "Music",
+                    "teacher": "Mr. Blue"
                 }
-            ],
-            "gpa": 3.9
+            },
+            "gpa": 3.9,
+            "name": "Charlie"
         },
-        {
-            "name": "David",
-            "classes": [
-                {
+        "David": {
+            "classes": {
+                "Computer Science": {
+                    "assignments": [
+                        {
+                            "assignment": "Project 1",
+                            "grade": 88
+                        },
+                        {
+                            "assignment": "Final Exam",
+                            "grade": 94
+                        },
+                        {
+                            "assignment": "Coding Challenge",
+                            "grade": 90
+                        }
+                    ],
                     "className": "Computer Science",
-                    "teacher": "Mr. Black",
-                    "assignments": [
-                        {"assignment": "Project 1", "grade": 88},
-                        {"assignment": "Final Exam", "grade": 94},
-                        {"assignment": "Coding Challenge", "grade": 90}
-                    ]
+                    "teacher": "Mr. Black"
                 },
-                {
+                "Physics": {
+                    "assignments": [
+                        {
+                            "assignment": "Lab Report",
+                            "grade": 87
+                        },
+                        {
+                            "assignment": "Final Exam",
+                            "grade": 91
+                        }
+                    ],
+                    "className": "Physics",
+                    "teacher": "Dr. Brown"
+                },
+                "Statistics": {
+                    "assignments": [
+                        {
+                            "assignment": "Homework",
+                            "grade": 85
+                        },
+                        {
+                            "assignment": "Midterm",
+                            "grade": 90
+                        },
+                        {
+                            "assignment": "Final Project",
+                            "grade": 93
+                        }
+                    ],
                     "className": "Statistics",
-                    "teacher": "Mrs. Grey",
-                    "assignments": [
-                        {"assignment": "Homework", "grade": 85},
-                        {"assignment": "Midterm", "grade": 90},
-                        {"assignment": "Final Project", "grade": 93}
-                    ]
-                },
-                {
-                    "className": "Physics",
-                    "teacher": "Dr. Brown",
-                    "assignments": [
-                        {"assignment": "Lab Report", "grade": 87},
-                        {"assignment": "Final Exam", "grade": 91}
-                    ]
+                    "teacher": "Mrs. Grey"
                 }
-            ],
-            "gpa": 3.8
+            },
+            "gpa": 3.8,
+            "name": "David"
         },
-        {
-            "name": "Eva",
-            "classes": [
-                {
-                    "className": "Physics",
-                    "teacher": "Dr. Brown",
+        "Eva": {
+            "classes": {
+                "Biology": {
                     "assignments": [
-                        {"assignment": "Lab Report", "grade": 87},
-                        {"assignment": "Final Exam", "grade": 91},
-                        {"assignment": "Quiz 1", "grade": 89}
-                    ]
-                },
-                {
-                    "className": "Chemistry",
-                    "teacher": "Mrs. White",
-                    "assignments": [
-                        {"assignment": "Experiment", "grade": 92},
-                        {"assignment": "Midterm", "grade": 88},
-                        {"assignment": "Final Project", "grade": 90}
-                    ]
-                },
-                {
+                        {
+                            "assignment": "Research Paper",
+                            "grade": 85
+                        },
+                        {
+                            "assignment": "Presentation",
+                            "grade": 93
+                        }
+                    ],
                     "className": "Biology",
-                    "teacher": "Ms. Red",
+                    "teacher": "Ms. Red"
+                },
+                "Chemistry": {
                     "assignments": [
-                        {"assignment": "Research Paper", "grade": 85},
-                        {"assignment": "Presentation", "grade": 93}
-                    ]
+                        {
+                            "assignment": "Experiment",
+                            "grade": 92
+                        },
+                        {
+                            "assignment": "Midterm",
+                            "grade": 88
+                        },
+                        {
+                            "assignment": "Final Project",
+                            "grade": 90
+                        }
+                    ],
+                    "className": "Chemistry",
+                    "teacher": "Mrs. White"
+                },
+                "Physics": {
+                    "assignments": [
+                        {
+                            "assignment": "Lab Report",
+                            "grade": 87
+                        },
+                        {
+                            "assignment": "Final Exam",
+                            "grade": 91
+                        },
+                        {
+                            "assignment": "Quiz 1",
+                            "grade": 89
+                        }
+                    ],
+                    "className": "Physics",
+                    "teacher": "Dr. Brown"
                 }
-            ],
-            "gpa": 3.6
+            },
+            "gpa": 3.6,
+            "name": "Eva"
         }
-    ]
+    }
 }
