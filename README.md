@@ -34,4 +34,6 @@ This is the lowest level language in which I've developed a project. I think whe
 
 - Add Credit Amounts and display them
 - Include Possible Course Codes with Classes
-- Item 3
+- Implement further functions to decrease redundancies
+    - functions for class and assignment selection
+    - function for gpa calculation implemented to assignment functions

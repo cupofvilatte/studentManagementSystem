@@ -109,7 +109,7 @@
                     "teacher": "Mr. White"
                 }
             },
-            "gpa": 3.4,
+            "gpa": 3.42,
             "name": "Bob"
         },
         "Charlie": {
@@ -165,7 +165,7 @@
                     "teacher": "Mr. Blue"
                 }
             },
-            "gpa": 3.9,
+            "gpa": 3.66,
             "name": "Charlie"
         },
         "David": {
@@ -221,7 +221,7 @@
                     "teacher": "Mrs. Grey"
                 }
             },
-            "gpa": 3.8,
+            "gpa": 3.59,
             "name": "David"
         },
         "Eva": {
@@ -277,7 +277,7 @@
                     "teacher": "Dr. Brown"
                 }
             },
-            "gpa": 3.6,
+            "gpa": 3.58,
             "name": "Eva"
         }
     }

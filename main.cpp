@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iomanip>
 #include "include/json.hpp"
 
 // shortcut to not add std in the code
@@ -34,8 +35,8 @@ void viewInfo(const map<string, Student>& studentData);
 void modifyStudentData(map<string, Student>& students);
 void updateStudentGrade(map<string, Student>& students);
 void createAssignment(map<string, Student>& students);
-void calculateGPA();
-void exitProgram();
+void calculateGPA(map<string, Student>& students);
+bool exitProgram(const map<string, Student>& students);
 void writeDataToFile(const map<string, Student>& students);
 
 
@@ -126,6 +127,7 @@ void menu()
         case 3:
         // 3. updating student grade
             updateStudentGrade(students);
+            break;
 
         case 4:
         // 4. create student assignment
@@ -136,7 +138,7 @@ void menu()
         /*
         5. calculate gpa (by iterating through assignment grades). this also updates the json file
         */
-            calculateGPA();
+            calculateGPA(students);
             break;
 
         case 6:
@@ -144,13 +146,15 @@ void menu()
         6. exit (ends program)
             a. Do you want to save? (yes saves working file to json. no doesn't do a final save)
         */
-            exitProgram();
+            if (exitProgram(students)) {
+                return;
+            }
             break;
 
         default:
             cout << "Invalid choice! Please try again.\n";
         }
-    } while (choice != 6); 
+    } while (true); 
 }
 
 void viewInfo(const map<string, Student>& studentData)
@@ -364,14 +368,57 @@ void createAssignment(map<string, Student>& students)
     cout << "Assignment added!" << endl;
 }
 
-void calculateGPA()
+void calculateGPA(map<string, Student>& students)
 {
+    string studentName;
+    cout << "Enter a student's name: ";
+    cin.ignore();
+    getline(cin, studentName);
 
+    if (students.find(studentName) == students.end()) {
+        cout << "The student could not be found." << endl;
+        return;
+    }
+
+    Student& student = students[studentName];
+    int totalGrade = 0;
+    int assignmentCount = 0;
+
+    for (const auto& course : student.classes) {
+        for (const auto& assignment : course.assignments) {
+            totalGrade += assignment.grade;
+            assignmentCount++;
+        }
+    }
+
+    if (assignmentCount == 0) {
+        cout << "No assignments found for this student. GPA cannot be determined." << endl;
+        return;
+    }
+
+    double averageGrade = static_cast<double>(totalGrade) / assignmentCount;
+
+    student.gpa = (averageGrade / 100) * 4.0;
+
+    writeDataToFile(students);
+
+    cout << "GPA successfully updated." << endl;
 }
 
-void exitProgram()
+bool exitProgram(const map<string, Student>& students)
 {
+    char choice;
+    cout << "Are you sure you want to exit (y/n): ";
+    cin >> choice;
 
+    if (choice == 'y' || choice == 'Y') {
+        writeDataToFile(students);
+        cout << "Goodbye!" << endl;
+        return true;
+    } else {
+        cout << "Continuing to program..." << endl;
+        return false;
+    }
 }
 
 void writeDataToFile(const map<string, Student>& students)
@@ -382,7 +429,9 @@ void writeDataToFile(const map<string, Student>& students)
     for (const auto& [name, student] : students) {
         json studentJson;
         studentJson["name"] = student.name;
-        studentJson["gpa"] = student.gpa;
+
+        // GPA rounded to 2 decimal places
+        studentJson["gpa"] = round(student.gpa * 100.0) / 100.0;
 
         studentJson["classes"] = json::object();
         for (const auto& course : student.classes) {
