@@ -29,6 +29,10 @@
                         {
                             "assignment": "Final Exam",
                             "grade": 92
+                        },
+                        {
+                            "assignment": "Homework 2",
+                            "grade": 99
                         }
                     ],
                     "className": "Math",

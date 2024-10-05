@@ -33,7 +33,7 @@ struct Student
 void viewInfo(const map<string, Student>& studentData);
 void modifyStudentData(map<string, Student>& students);
 void updateStudentGrade(map<string, Student>& students);
-void createAssignment();
+void createAssignment(map<string, Student>& students);
 void calculateGPA();
 void exitProgram();
 void writeDataToFile(const map<string, Student>& students);
@@ -127,8 +127,9 @@ void menu()
         // 3. updating student grade
             updateStudentGrade(students);
 
+        case 4:
         // 4. create student assignment
-            createAssignment();
+            createAssignment(students);
             break;
 
         case 5:
@@ -304,9 +305,63 @@ void updateStudentGrade(map<string, Student>& students)
     writeDataToFile(students);
 }
 
-void createAssignment()
+void createAssignment(map<string, Student>& students)
 {
+    string studentName;
+    cout << "Enter a student name: ";
+    cin.ignore();
+    getline(cin, studentName);
 
+    if (students.find(studentName) == students.end()) {
+        cout << "The student could not be found." << endl;
+        return;
+    }
+
+    Student& student = students[studentName];
+
+    string className;
+    cout << "Enter the class name: ";
+    getline(cin, className);
+
+    auto classIt = find_if(student.classes.begin(), student.classes.end(),
+                        [&className](const Class& c) {
+                            return c.className == className;
+                        });
+    if (classIt == student.classes.end()) {
+        cout << "The class could not be found." << endl;
+        return;
+    }
+
+    string assignmentName;
+    cout << "Enter the assignment name: ";
+    getline(cin, assignmentName);
+
+    string gradeFraction;
+    cout << "Enter the grade as a fraction: ";
+    getline(cin, gradeFraction);
+
+    size_t delimiter = gradeFraction.find('/');
+    if (delimiter == string::npos) {
+        cout << "Invalid fraction format!" << endl;
+        return;
+    }
+
+    int numerator = stoi(gradeFraction.substr(0, delimiter));
+    int denominator = stoi(gradeFraction.substr(delimiter + 1));
+
+    if (denominator == 0) {
+        cout << "Cannot divide by zero!" << endl;
+        return;
+    }
+
+    int gradePercentage = static_cast<int>((static_cast<double>(numerator) / denominator) * 100);
+
+    Assignment newAssignment{assignmentName, gradePercentage};
+    classIt->assignments.push_back(newAssignment);
+
+    writeDataToFile(students);
+
+    cout << "Assignment added!" << endl;
 }
 
 void calculateGPA()
