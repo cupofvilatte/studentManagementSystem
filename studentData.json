@@ -6,7 +6,7 @@
                     "assignments": [
                         {
                             "assignment": "Research Paper",
-                            "grade": 87
+                            "grade": 95
                         },
                         {
                             "assignment": "Presentation",
@@ -53,7 +53,7 @@
                     "teacher": "Mrs. Johnson"
                 }
             },
-            "gpa": 3.7,
+            "gpa": 3.64,
             "name": "Alice"
         },
         "Bob": {

@@ -32,7 +32,7 @@ struct Student
 // map<string, Student> studentMap();
 void viewInfo(const map<string, Student>& studentData);
 void modifyStudentData(map<string, Student>& students);
-void updateStudentGrade();
+void updateStudentGrade(map<string, Student>& students);
 void createAssignment();
 void calculateGPA();
 void exitProgram();
@@ -125,7 +125,7 @@ void menu()
 
         case 3:
         // 3. updating student grade
-            updateStudentGrade();
+            updateStudentGrade(students);
 
         // 4. create student assignment
             createAssignment();
@@ -232,9 +232,76 @@ void modifyStudentData(map<string, Student>& students)
     writeDataToFile(students);
 }
 
-void updateStudentGrade()
+void updateStudentGrade(map<string, Student>& students)
 {
+    cout << "Enter a student's name: ";
+    string studentName;
+    cin.ignore();
+    getline(cin, studentName);
 
+    if (students.find(studentName) == students.end()) {
+        cout << "student could not be found!" << endl;
+        return;
+    }
+    Student& student = students[studentName];
+
+    cout << "--- Class List ---" << endl;
+    for (size_t i = 0; i < student.classes.size(); ++i) {
+        cout << i + 1 << ") " << student.classes[i].className << " | Teacher: " << student.classes[i].teacher << endl;
+    }
+    int classChoice;
+    cout << "Enter your class choice: ";
+    cin >> classChoice;
+
+    Class& selectedClass = student.classes[classChoice - 1];
+
+    cout << "Select an assignment to update: " << endl;
+    for (size_t i = 0; i < selectedClass.assignments.size(); ++i) {
+        cout << i + 1 << ") " << selectedClass.assignments[i].assignment << " | Grade: " << selectedClass.assignments[i].grade << endl;
+    }
+    int assignmentChoice;
+    cout << "Enter your choice: ";
+    cin >> assignmentChoice;
+
+    Assignment& selectedAssignment = selectedClass.assignments[assignmentChoice - 1];
+
+    cout << "Enter the new grade as a fraction: ";
+    string fraction;
+    cin >> fraction;
+
+    size_t slashPos = fraction.find('/');
+    if (slashPos == string::npos) {
+        cout << "Invalid!" << endl;
+        return;
+    }
+
+    int numerator = stoi(fraction.substr(0, slashPos));
+    int denominator = stoi(fraction.substr(slashPos + 1));
+
+    if (denominator == 0) {
+        cout << "Cannot divide by zero!" << endl;
+        return;
+    }
+
+    // calculate percentage
+    double percentage = static_cast<double>(numerator) / denominator * 100;
+    selectedAssignment.grade = static_cast<int>(percentage);
+    cout << "Assignment changed to: " << selectedAssignment.grade << "%" << endl;
+
+    double totalGrades = 0.0;
+    int totalAssignments = 0;
+
+    for (const auto& course : student.classes) {
+        for (const auto& assignment : course.assignments) {
+            totalGrades += assignment.grade;
+            ++totalAssignments;
+        }
+    }
+
+    student.gpa = totalAssignments > 0 ? totalGrades / totalAssignments / 25.0 : 0.0;
+    cout << "GPA update to: " << student.gpa << endl;
+
+    writeDataToFile(students);
 }
 
 void createAssignment()
