@@ -126,7 +126,7 @@
                         },
                         {
                             "assignment": "Sketching Assignment",
-                            "grade": 89
+                            "grade": 95
                         }
                     ],
                     "className": "Art",
@@ -165,7 +165,7 @@
                     "teacher": "Mr. Blue"
                 }
             },
-            "gpa": 3.66,
+            "gpa": 3.69,
             "name": "Charlie"
         },
         "David": {
@@ -235,6 +235,10 @@
                         {
                             "assignment": "Presentation",
                             "grade": 93
+                        },
+                        {
+                            "assignment": "Lab Report",
+                            "grade": 80
                         }
                     ],
                     "className": "Biology",
